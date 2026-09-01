@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#f6f5f1" />
+  <title>Maya Math Intervention Coach</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div>
+        <h1>Maya Math Coach</h1>
+        <p>Parent-facing. One teaching move at a time.</p>
+      </div>
+      <button id="homeBtn" class="quiet small-btn" type="button">Home</button>
+    </header>
+
+    <section id="screen" class="screen" aria-live="polite"></section>
+  </main>
+
+  <template id="homeTemplate">
+    <div class="eyebrow">MENTAL MATH INTERVENTION</div>
+    <h2>What are you teaching today?</h2>
+    <p class="lead">Choose one idea. The coach will tell you what to put on the table, what to say, what to ask, and what to do next.</p>
+    <div id="strategyList" class="stack"></div>
+    <div class="home-actions">
+      <button id="resumeBtn" class="secondary" type="button">Resume last lesson</button>
+      <button id="progressBtn" class="quiet" type="button">View Maya's progress</button>
+    </div>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
