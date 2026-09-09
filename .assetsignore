@@ -1,0 +1,11 @@
+node_modules/
+functions/
+src/
+.git/
+.github/
+package.json
+bun.lock
+bun.lockb
+wrangler.jsonc
+README.md
+.gitignore
