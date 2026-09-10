@@ -12,6 +12,11 @@ function renderProfiles(){
         <strong>Singapore Math</strong>
         <span>Number sense, operations, measurement, fractions and more</span>
       </button>
+      <button class="profile-tile" id="speedMathProfile">
+        <span class="profile-kicker">Maya · Bill Handley</span>
+        <strong>Speed Math</strong>
+        <span>Mental calculation, reference numbers, compensation and checking</span>
+      </button>
       <button class="profile-tile" id="olympiadProfile">
         <span class="profile-kicker">Zara · Terry Chew</span>
         <strong>Olympiad Math</strong>
@@ -28,6 +33,7 @@ function renderProfiles(){
     singaporeHome();
     homeBtn.onclick = renderProfiles;
   };
+  document.getElementById('speedMathProfile').onclick = () => window.renderSpeedMathHome();
   document.getElementById('olympiadProfile').onclick = () => window.renderOlympiadHome();
   document.getElementById('calculusProfile').onclick = () => window.renderCalculusHome();
 }
