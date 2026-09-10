@@ -7,6 +7,10 @@ function extractDriveId(value) {
 }
 
 async function lessonPdf(request) {
+  const cache = caches.default;
+  const cached = await cache.match(request);
+  if (cached) return cached;
+
   const url = new URL(request.url);
   const id = extractDriveId(url.searchParams.get("id"));
   const start = Number(url.searchParams.get("start"));
@@ -46,13 +50,17 @@ async function lessonPdf(request) {
   copied.forEach(page => out.addPage(page));
   const pdf = await out.save();
 
-  return new Response(pdf, {
+  const response = new Response(pdf, {
     headers: {
       "Content-Type": "application/pdf",
       "Content-Disposition": `inline; filename="math-pages-${start}-${safeEnd}.pdf"`,
-      "Cache-Control": "private, max-age=300"
+      "Cache-Control": "public, max-age=86400, s-maxage=86400"
     }
   });
+
+  // Cache the generated excerpt so opening the same chapter again does not re-download the whole source PDF.
+  await cache.put(request, response.clone());
+  return response;
 }
 
 export default {
