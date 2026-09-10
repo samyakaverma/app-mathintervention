@@ -3,17 +3,17 @@ const singaporeHome = renderHome;
 
 function renderProfiles(){
   screen.innerHTML = `
-    <div class="eyebrow">MAYA MATH COACH</div>
+    <div class="eyebrow">MATH INTERVENTION COACH</div>
     <h2>Choose a maths profile</h2>
-    <p class="lead">These are separate teaching paths. Maya works with you and manipulatives; the site coaches the parent.</p>
+    <p class="lead">These are separate teaching paths for different learners. The site coaches the parent; the child works with you and the materials.</p>
     <div class="profile-grid">
       <button class="profile-tile" id="singaporeProfile">
-        <span class="profile-kicker">Primary Mathematics</span>
+        <span class="profile-kicker">Maya · Primary Mathematics</span>
         <strong>Singapore Math</strong>
         <span>Number sense, operations, measurement, fractions and more</span>
       </button>
       <button class="profile-tile" id="olympiadProfile">
-        <span class="profile-kicker">Terry Chew</span>
+        <span class="profile-kicker">Zara · Terry Chew</span>
         <strong>Olympiad Math</strong>
         <span>Problem-solving strategies and non-routine questions</span>
       </button>
